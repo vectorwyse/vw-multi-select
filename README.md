@@ -110,9 +110,6 @@ components: {VwMultisSelect},
     removeIcon: "",
     selectedIcon: "",
     unselectedIcon: "",
-    unselectedListItem: "",
-    unselectedListItemText: "",
-    wrapper: "",
 }
 ```
 
