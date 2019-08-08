@@ -117,7 +117,7 @@ components: {VwMultisSelect},
 ```
 
 ## Support Us
----
+
 [Vectorwyse](https://vectorwyse.com) is a digital agency offering advisory and web development services. We love building things with Laravel and Vue.js, so when we have an opportunity to give back to the community, we're super excited!
 
 If you find this package useful, or if you would like us to build something for you, feel free to [drop us a line!](mailto:hello@vectorwyse.com)
