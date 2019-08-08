@@ -197,7 +197,7 @@ import bootstrap from "./vwms_bootstrap";
 import fa from "./vwms_fontawesome";
 
 export default {
-  name: "MultiSelect",
+  name: "VwMultiSelect",
   props: {
     value: {
       type: Array,

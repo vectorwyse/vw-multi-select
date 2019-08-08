@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.0
+ * vw-multi-select v0.1.2
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -58,7 +58,7 @@ var fa = {
 
 var _this = undefined;
 var script = {
-  name: "MultiSelect",
+  name: "VwMultiSelect",
   props: {
     value: {
       type: Array,
@@ -489,8 +489,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-a994ac40_0", {
-    source: "[data-v-a994ac40]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-a994ac40]{background:0 0}.border-bottom[data-v-a994ac40]{border-bottom:var(--border-style)}.border[data-v-a994ac40]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-a994ac40]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-a994ac40]{border:none}.cursor-pointer[data-v-a994ac40]{cursor:pointer}.display-flex[data-v-a994ac40]{display:flex}.font-size-080[data-v-a994ac40]{font-size:80%}.font-style-italic[data-v-a994ac40]{font-style:italic}.font-weight-bold[data-v-a994ac40]{font-weight:700}.height-120px[data-v-a994ac40]{height:120px}.margin-x-6px[data-v-a994ac40]{margin:0 6px 0 6px}.padding-6px[data-v-a994ac40]{padding:6px}.overflow-y-auto[data-v-a994ac40]{overflow-y:auto}.text-decoration-underline[data-v-a994ac40]{text-decoration:underline}.width-100[data-v-a994ac40]{width:100%}",
+  inject("data-v-49c38a9f_0", {
+    source: "[data-v-49c38a9f]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-49c38a9f]{background:0 0}.border-bottom[data-v-49c38a9f]{border-bottom:var(--border-style)}.border[data-v-49c38a9f]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-49c38a9f]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-49c38a9f]{border:none}.cursor-pointer[data-v-49c38a9f]{cursor:pointer}.display-flex[data-v-49c38a9f]{display:flex}.font-size-080[data-v-49c38a9f]{font-size:80%}.font-style-italic[data-v-49c38a9f]{font-style:italic}.font-weight-bold[data-v-49c38a9f]{font-weight:700}.height-120px[data-v-49c38a9f]{height:120px}.margin-x-6px[data-v-49c38a9f]{margin:0 6px 0 6px}.padding-6px[data-v-49c38a9f]{padding:6px}.overflow-y-auto[data-v-49c38a9f]{overflow-y:auto}.text-decoration-underline[data-v-49c38a9f]{text-decoration:underline}.width-100[data-v-49c38a9f]{width:100%}",
     map: undefined,
     media: undefined
   });
@@ -498,7 +498,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-a994ac40";
+var __vue_scope_id__ = "data-v-49c38a9f";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
@@ -536,5 +536,5 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 } // To allow use as module (npm/webpack/etc.) export component
 
-exports.default = component;
+exports.default = VwMultiSelect;
 exports.install = install;
