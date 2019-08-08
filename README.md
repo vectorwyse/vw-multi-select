@@ -34,8 +34,10 @@ components: {VwMultisSelect},
 | Name                         | Description                                                      | Type      | Required  | Options | Default  |
 |------------------------------|------------------------------------------------------------------|-----------|-----------|---------|----------|
 | list                         | The list of options to select from                               | Array     | yes       |         |          |
-| selectedListDisplayFunction  | Determines how an option is displayed in the selected items list | Function  |           |         |          |
+| selectedListDisplayFunction  | Determines how an option is displayed in the selected items list | Function  |           |         | `item => {return this.listItemProperty ? item[this.listItemProperty] : item;}` |
 | listItemDisplayFunction      | Determines how an option is displayed in the list                | Function  |           |         | `item => {return this.listItemProperty ? item[this.listItemProperty] : item;}` |
-| valueProperty                | Determines how an option is displayed in the list                | Function  |           |         | `item => {return this.listItemProperty ? item[this.listItemProperty] : item;}` |
+| valueProperty                | The property from the option which will be used in the v-model and lists, can overridden on render by `selectedListDisplayFunction` and `listItemDisplayFunction` | String  | | | |
+
+
 
 
