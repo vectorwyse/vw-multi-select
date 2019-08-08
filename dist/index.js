@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.7
+ * @vectorwyse/vw-multi-select v0.1.8
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -40,6 +40,10 @@ var bootstrap = {
     selectedIcon: "text-primary mr-2",
     unselectedIcon: "text-muted mr-2",
     autoAddText: "ml-2 font-italic text-primary"
+  },
+  disabledClasses: {
+    selectedItem: "mx-1 badge mb-1",
+    selectedIcon: "text-muted mr-2"
   },
   styles: {
     input: {
@@ -85,6 +89,10 @@ var script = {
         return _this.listItemProperty ? item[_this.listItemProperty] : item;
       }
     },
+    id: {
+      type: String,
+      required: false
+    },
     valueProperty: {
       type: String,
       required: false
@@ -92,6 +100,10 @@ var script = {
     listItemProperty: {
       type: String,
       required: false
+    },
+    disabled: {
+      type: Boolean,
+      "default": false
     },
     isInvalid: {
       type: Boolean,
@@ -197,28 +209,28 @@ var script = {
     _icons: function _icons() {
       switch (this.iconset) {
         case "font-awesome":
-          return Object.assign({}, fa.icons, {}, this.icons);
+          return Object.assign({}, fa.icons, {}, this.icons, {}, this.disabled ? this.disabledIcons : {});
 
         default:
-          return Object.assign({}, this.icons);
+          return Object.assign({}, this.icons, {}, this.disabled ? this.disabledIcons : {});
       }
     },
     _classes: function _classes() {
       switch (this.template) {
         case "bootstrap":
-          return Object.assign({}, this.defaultClasses, {}, bootstrap.classes, {}, this.classes);
+          return Object.assign({}, this.defaultClasses, {}, bootstrap.classes, {}, this.classes, {}, this.disabled ? this.disabledClasses : {});
 
         default:
-          return Object.assign({}, this.defaultClasses, {}, this.classes);
+          return Object.assign({}, this.defaultClasses, {}, this.classes, {}, this.disabled ? this.disabledClasses : {});
       }
     },
     _styles: function _styles() {
       switch (this.template) {
         case "bootstrap":
-          return Object.assign({}, this.defaultStyles, {}, bootstrap.styles, {}, this.styles);
+          return Object.assign({}, this.defaultStyles, {}, bootstrap.styles, {}, this.styles, {}, this.disabled ? this.disabledStyles : {});
 
         default:
-          return Object.assign({}, this.defaultStyles, {}, this.styles);
+          return Object.assign({}, this.defaultStyles, {}, this.styles, {}, this.disabled ? this.disabledStyles : {});
       }
     },
     selectedItems: function selectedItems() {
@@ -246,6 +258,7 @@ var script = {
     autoAddItem: function autoAddItem() {
       var _this4 = this;
 
+      if (this.disabled) return null;
       var filteredItems = this.unselectedItems.filter(function (listItem) {
         return _this4.listItemDisplayFunction(listItem).toLowerCase().includes(_this4.query.toLowerCase().trim());
       });
@@ -285,6 +298,8 @@ var script = {
     toggleItem: function toggleItem(item) {
       var _this6 = this;
 
+      if (this.disabled) return;
+
       var resultingSelectedItems = _toConsumableArray(this.selectedItems);
 
       var itemIndex = this.itemIndex(item);
@@ -322,7 +337,7 @@ var __vue_render__ = function __vue_render__() {
     "class": [_vm._classes.wrapper, _vm.isInvalid ? _vm._classes.invalid : ''],
     style: _vm._styles.wrapper,
     attrs: {
-      "id": "vwms-wrapper" + (_vm.appendRandomId ? _vm.random : '')
+      "id": _vm.id || "vwms-wrapper" + (_vm.appendRandomId ? _vm.random : '')
     }
   }, [_vm.tags || _vm.searchable ? [_c('div', {
     "class": _vm._classes.selected,
@@ -404,6 +419,7 @@ var __vue_render__ = function __vue_render__() {
       style: _vm._styles.selectedIcon,
       attrs: {
         "type": "checkbox",
+        "disabled": _vm.disabled,
         "checked": "checked"
       }
     })], _vm._v(" "), _c('span', {
@@ -428,7 +444,8 @@ var __vue_render__ = function __vue_render__() {
     })] : [_c('input', {
       style: _vm._styles.unselectedIcon,
       attrs: {
-        "type": "checkbox"
+        "type": "checkbox",
+        "disabled": _vm.disabled
       },
       domProps: {
         "value": false
@@ -459,6 +476,7 @@ var __vue_render__ = function __vue_render__() {
       style: _vm._styles.selectedIcon,
       attrs: {
         "type": "checkbox",
+        "disabled": _vm.disabled,
         "checked": "checked"
       }
     })] : _vm._e(), _vm._v(" "), !_vm.isItemSelected(item) && _vm._icons.unselectedIcon ? [_c('i', {
@@ -467,7 +485,8 @@ var __vue_render__ = function __vue_render__() {
     })] : _vm._e(), _vm._v(" "), !_vm.isItemSelected(item) && !_vm._icons.unselectedIcon ? [_c('input', {
       style: _vm._styles.unselectedIcon,
       attrs: {
-        "type": "checkbox"
+        "type": "checkbox",
+        "disabled": _vm.disabled
       },
       domProps: {
         "value": false
@@ -487,8 +506,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-179c63c4_0", {
-    source: "[data-v-179c63c4]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-179c63c4]{background:0 0}.border-bottom[data-v-179c63c4]{border-bottom:var(--border-style)}.border[data-v-179c63c4]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-179c63c4]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-179c63c4]{border:none}.cursor-pointer[data-v-179c63c4]{cursor:pointer}.display-flex[data-v-179c63c4]{display:flex}.font-size-080[data-v-179c63c4]{font-size:80%}.font-style-italic[data-v-179c63c4]{font-style:italic}.font-weight-bold[data-v-179c63c4]{font-weight:700}.height-120px[data-v-179c63c4]{height:120px}.margin-x-6px[data-v-179c63c4]{margin:0 6px 0 6px}.padding-6px[data-v-179c63c4]{padding:6px}.overflow-y-auto[data-v-179c63c4]{overflow-y:auto}.text-decoration-underline[data-v-179c63c4]{text-decoration:underline}",
+  inject("data-v-56e73d68_0", {
+    source: "[data-v-56e73d68]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-56e73d68]{background:0 0}.border-bottom[data-v-56e73d68]{border-bottom:var(--border-style)}.border[data-v-56e73d68]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-56e73d68]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-56e73d68]{border:none}.cursor-pointer[data-v-56e73d68]{cursor:pointer}.display-flex[data-v-56e73d68]{display:flex}.font-size-080[data-v-56e73d68]{font-size:80%}.font-style-italic[data-v-56e73d68]{font-style:italic}.font-weight-bold[data-v-56e73d68]{font-weight:700}.height-120px[data-v-56e73d68]{height:120px}.margin-x-6px[data-v-56e73d68]{margin:0 6px 0 6px}.padding-6px[data-v-56e73d68]{padding:6px}.overflow-y-auto[data-v-56e73d68]{overflow-y:auto}.text-decoration-underline[data-v-56e73d68]{text-decoration:underline}",
     map: undefined,
     media: undefined
   });
@@ -496,7 +515,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-179c63c4";
+var __vue_scope_id__ = "data-v-56e73d68";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;

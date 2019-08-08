@@ -1,6 +1,6 @@
 <template>
   <div
-    :id="`vwms-wrapper${appendRandomId ? random : ''}`"
+    :id="id || `vwms-wrapper${appendRandomId ? random : ''}`"
     :class="[_classes.wrapper, isInvalid ? _classes.invalid : '']"
     :style="_styles.wrapper"
   >
@@ -70,6 +70,7 @@
           <template v-else="">
             <input
               type="checkbox"
+              :disabled="disabled"
               checked="checked"
               :style="_styles.selectedIcon"
             />
@@ -100,6 +101,7 @@
           <template v-else="">
             <input
               type="checkbox"
+              :disabled="disabled"
               :value="false"
               :style="_styles.unselectedIcon"
             />
@@ -148,6 +150,7 @@
           <template v-if="isItemSelected(item) && !_icons.selectedIcon">
             <input
               type="checkbox"
+              :disabled="disabled"
               checked="checked"
               :style="_styles.selectedIcon"
             />
@@ -161,6 +164,7 @@
           <template v-if="!isItemSelected(item) && !_icons.unselectedIcon">
             <input
               type="checkbox"
+              :disabled="disabled"
               :value="false"
               :style="_styles.unselectedIcon"
             />
@@ -220,6 +224,10 @@ export default {
         return this.listItemProperty ? item[this.listItemProperty] : item;
       }
     },
+    id: {
+      type: String,
+      required: false
+    },
     valueProperty: {
       type: String,
       required: false
@@ -227,6 +235,10 @@ export default {
     listItemProperty: {
       type: String,
       required: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     isInvalid: {
       type: Boolean,
@@ -336,11 +348,13 @@ export default {
         case "font-awesome":
           return {
             ...fa.icons,
-            ...this.icons
+            ...this.icons,
+            ...(this.disabled ? this.disabledIcons : {})
           };
         default:
           return {
-            ...this.icons
+            ...this.icons,
+            ...(this.disabled ? this.disabledIcons : {})
           };
       }
     },
@@ -350,12 +364,14 @@ export default {
           return {
             ...this.defaultClasses,
             ...bootstrap.classes,
-            ...this.classes
+            ...this.classes,
+            ...(this.disabled ? this.disabledClasses : {})
           };
         default:
           return {
             ...this.defaultClasses,
-            ...this.classes
+            ...this.classes,
+            ...(this.disabled ? this.disabledClasses : {})
           };
       }
     },
@@ -365,12 +381,14 @@ export default {
           return {
             ...this.defaultStyles,
             ...bootstrap.styles,
-            ...this.styles
+            ...this.styles,
+            ...(this.disabled ? this.disabledStyles : {})
           };
         default:
           return {
             ...this.defaultStyles,
-            ...this.styles
+            ...this.styles,
+            ...(this.disabled ? this.disabledStyles : {})
           };
       }
     },
@@ -391,6 +409,7 @@ export default {
       });
     },
     autoAddItem() {
+      if (this.disabled) return null;
       let filteredItems = this.unselectedItems.filter(listItem =>
         this.listItemDisplayFunction(listItem)
           .toLowerCase()
@@ -435,6 +454,7 @@ export default {
     },
 
     toggleItem(item) {
+      if (this.disabled) return;
       let resultingSelectedItems = [...this.selectedItems];
       const itemIndex = this.itemIndex(item);
       if (itemIndex > -1) {
@@ -520,5 +540,4 @@ export default {
 .text-decoration-underline {
   text-decoration: underline;
 }
-
 </style>
