@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.4
+ * @vectorwyse/vw-multi-select v0.1.5
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -35,13 +35,16 @@ function _nonIterableSpread() {
 var bootstrap = {
   classes: {
     invalid: "border-danger",
-    selected: "d-flex align-items-center p-1",
+    selected: "d-flex flex-wrap align-items-center mb-1 p-1",
     selectedItem: "mx-1 badge badge-primary",
     selectedIcon: "text-primary mr-2",
     unselectedIcon: "text-muted mr-2",
     autoAddText: "ml-2 font-italic text-primary"
   },
   styles: {
+    input: {
+      minWidth: "150px"
+    },
     selected: {
       borderBottom: "solid 1px #ced4da"
     }
