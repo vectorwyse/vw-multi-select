@@ -4,7 +4,7 @@ A styleable multi-select component for Vue.js
 
 ## Installation
 
-`npm install vw-multi-select`
+`npm install @vectorwyse/vw-multi-select`
 
 ## Usage
 
@@ -13,8 +13,8 @@ A styleable multi-select component for Vue.js
 In your entry file:
 
 ```
-import 'VwMultiSelect' from 'vw-multi-select';
-Vue.use(VwMultiSelect);
+import VwMultiSelect from "@vectorwyse/vw-multi-select";
+Vue.component('vw-multi-select', VwMultiSelect);
 ```
 
 _or:_
@@ -24,7 +24,7 @@ _or:_
 In your component:
 
 ```
-import 'VwMultiSelect' from 'vw-multi-select';
+import VwMultiSelect from "@vectorwyse/vw-multi-select";
 ...
 components: {VwMultiSelect},
 ...
@@ -49,7 +49,7 @@ components: {VwMultiSelect},
 | valueProperty               | The property from the option which will be used in the v-model a                                                                                      | String   |          |                    |                                                                                |
 | listItemProperty            | The property from the option which will be used in the lists, can overridden on render by `selectedListDisplayFunction` and `listItemDisplayFunction` | String   |          |                    |                                                                                |
 | isInvalid                   | Applies the 'invalid' class to the wrapper if set to true                                                                                             | Boolean  |          |                    | false                                                                          |
-| iconset                     | The set of icons used                                                                                                                                 | String   |          | ['font-awesome']   |                                                                                |
+| iconset                     | The set of icons used                                                                                                                                 | String   |         | ['font-awesome']   |                                                                                |
 | template                    | The name of the classes template                                                                                                                      | String   |          | ['bootstrap']      |                                                                                |
 | appendRandomId              | If a random 6-digit string should be appended to the wrapper, selected and list ids in order to avoid conflicts                                       | Boolean  |          |                    | true                                                                           |
 | showSelectedFirst           | If the selected items should be moved to the top of the list                                                                                          | Boolean  |          |                    | false                                                                          |

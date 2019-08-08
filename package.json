@@ -1,6 +1,6 @@
 {
-  "name": "vw-multi-select",
-  "version": "0.1.2",
+  "name": "@vectorwyse/vw-multi-select",
+  "version": "0.1.3",
   "description": "A styleable multi-select component for Vue.js",
   "main": "./dist/index.js",
   "scripts": {

@@ -1,5 +1,5 @@
 /*!
- * vw-multi-select v0.1.2
+ * @vectorwyse/vw-multi-select v0.1.3
  * (c) Vectorwyse
  * Released under the MIT License.
  */
