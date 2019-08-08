@@ -1,0 +1,37 @@
+{
+	"name": "vw-multi-select",
+	"version": "0.0.1",
+	"description": "A styleable multi-select component for Vue.js",
+	"main": "./dist/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "vue serve VwMultiSelect.vue",
+		"build": "bili"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vectorwyse/vw-multi-select.git"
+	},
+	"files": [
+		"dist/*"
+	],
+	"keywords": [
+		"multi-select",
+		"stylable",
+		"styleable",
+		"vue",
+		"vectorwyse"
+	],
+	"author": "Vectorwyse",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vectorwyse/vw-multi-select/issues"
+	},
+	"homepage": "https://github.com/vectorwyse/vw-multi-select#readme",
+	"devDependencies": {
+		"bili": "^4.8.1",
+		"rollup-plugin-vue": "^5.0.1",
+		"vue": "^2.6.10",
+		"vue-template-compiler": "^2.6.10"
+	}
+}
