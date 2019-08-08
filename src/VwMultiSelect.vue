@@ -295,7 +295,7 @@ export default {
       defaultClasses: {
         autoAddText:
           "font-size-080 font-style-italic text-decoration-underline",
-        input: "background-transparent border-none width-100 font-size-080",
+        input: "background-transparent border-none margin-x-6px width-100 font-size-080",
         invalid: "border-darkred",
         list: "height-120px padding-6px overflow-y-auto",
         removeIcon: "margin-x-6px",
