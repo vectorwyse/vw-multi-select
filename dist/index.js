@@ -1,9 +1,11 @@
 /*!
- * vw-multi-select v0.0.1
+ * @vectorwyse/vw-multi-select v0.1.0
  * (c) Vectorwyse
  * Released under the MIT License.
  */
 'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
@@ -169,20 +171,20 @@ var script = {
         wrapper: "border"
       },
       defaultStyles: {
-        autoAddText: "",
-        input: "",
-        invalid: "",
-        list: "",
-        removeIcon: "",
-        selected: "",
-        selectedIcon: "",
-        selectedItem: "",
-        selectedListItem: "",
-        selectedListItemText: "",
-        unselectedIcon: "",
-        unselectedListItem: "",
-        unselectedListItemText: "",
-        wrapper: ""
+        autoAddText: {},
+        input: {},
+        invalid: {},
+        list: {},
+        removeIcon: {},
+        selected: {},
+        selectedIcon: {},
+        selectedItem: {},
+        selectedListItem: {},
+        selectedListItemText: {},
+        unselectedIcon: {},
+        unselectedListItem: {},
+        unselectedListItemText: {},
+        wrapper: {}
       },
       random: parseInt(Math.random() * 1e6),
       query: ""
@@ -334,7 +336,7 @@ var __vue_render__ = function __vue_render__() {
           return _vm.toggleItem(item);
         }
       }
-    }, [_vm._v(_vm._s(_vm.selectedListDisplayFunction(item)) + "\n                    "), _vm._icons.removeIcon ? [_c('i', {
+    }, [_vm._v(_vm._s(_vm.selectedListDisplayFunction(item)) + "\n          "), _vm._icons.removeIcon ? [_c('i', {
       "class": [_vm._classes.removeIcon, _vm._icons.removeIcon],
       style: _vm._styles.removeIcon,
       on: {
@@ -487,8 +489,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-1a0223dc_0", {
-    source: "[data-v-1a0223dc]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-1a0223dc]{background:0 0}.border-bottom[data-v-1a0223dc]{border-bottom:var(--border-style)}.border[data-v-1a0223dc]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-1a0223dc]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-1a0223dc]{border:none}.cursor-pointer[data-v-1a0223dc]{cursor:pointer}.display-flex[data-v-1a0223dc]{display:flex}.font-size-080[data-v-1a0223dc]{font-size:80%}.font-style-italic[data-v-1a0223dc]{font-style:italic}.font-weight-bold[data-v-1a0223dc]{font-weight:700}.height-120px[data-v-1a0223dc]{height:120px}.margin-x-6px[data-v-1a0223dc]{margin:0 6px 0 6px}.padding-6px[data-v-1a0223dc]{padding:6px}.overflow-y-auto[data-v-1a0223dc]{overflow-y:auto}.text-decoration-underline[data-v-1a0223dc]{text-decoration:underline}.width-100[data-v-1a0223dc]{width:100%}",
+  inject("data-v-a994ac40_0", {
+    source: "[data-v-a994ac40]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-a994ac40]{background:0 0}.border-bottom[data-v-a994ac40]{border-bottom:var(--border-style)}.border[data-v-a994ac40]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-a994ac40]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-a994ac40]{border:none}.cursor-pointer[data-v-a994ac40]{cursor:pointer}.display-flex[data-v-a994ac40]{display:flex}.font-size-080[data-v-a994ac40]{font-size:80%}.font-style-italic[data-v-a994ac40]{font-style:italic}.font-weight-bold[data-v-a994ac40]{font-weight:700}.height-120px[data-v-a994ac40]{height:120px}.margin-x-6px[data-v-a994ac40]{margin:0 6px 0 6px}.padding-6px[data-v-a994ac40]{padding:6px}.overflow-y-auto[data-v-a994ac40]{overflow-y:auto}.text-decoration-underline[data-v-a994ac40]{text-decoration:underline}.width-100[data-v-a994ac40]{width:100%}",
     map: undefined,
     media: undefined
   });
@@ -496,7 +498,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-1a0223dc";
+var __vue_scope_id__ = "data-v-a994ac40";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
@@ -510,12 +512,29 @@ var VwMultiSelect = __vue_normalize__({
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, __vue_create_injector__, undefined);
 
-var index = {
-  install: function install(Vue, options) {
-    // Let's register our component globally
-    // https://vuejs.org/v2/guide/components-registration.html
-    Vue.component("vw-multi-select", VwMultiSelect);
-  }
-};
+// Import vue component
 
-module.exports = index;
+function install(Vue) {
+  if (install.installed) return;
+  install.installed = true;
+  Vue.component("vw-multi-select", VwMultiSelect);
+} // Create module definition for Vue.use()
+
+var plugin = {
+  install: install
+}; // Auto-install when vue is found (eg. in browser via <script> tag)
+
+var GlobalVue = null;
+
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
+}
+
+if (GlobalVue) {
+  GlobalVue.use(plugin);
+} // To allow use as module (npm/webpack/etc.) export component
+
+exports.default = component;
+exports.install = install;

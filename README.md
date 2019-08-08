@@ -14,7 +14,7 @@ In your entry file:
 
 ```
 import 'VwMultiSelect' from 'vw-multi-select';
-Vue.component(VwMultisSelect);
+Vue.use(VwMultiSelect);
 ```
 
 _or:_
