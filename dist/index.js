@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.5
+ * @vectorwyse/vw-multi-select v0.1.7
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -35,8 +35,8 @@ function _nonIterableSpread() {
 var bootstrap = {
   classes: {
     invalid: "border-danger",
-    selected: "d-flex flex-wrap align-items-center mb-1 p-1",
-    selectedItem: "mx-1 badge badge-primary",
+    selected: "d-flex flex-wrap align-items-center p-1",
+    selectedItem: "mx-1 badge badge-primary mb-1",
     selectedIcon: "text-primary mr-2",
     unselectedIcon: "text-muted mr-2",
     autoAddText: "ml-2 font-italic text-primary"
@@ -159,7 +159,7 @@ var script = {
     return {
       defaultClasses: {
         autoAddText: "font-size-080 font-style-italic text-decoration-underline",
-        input: "background-transparent border-none width-100 font-size-080",
+        input: "background-transparent border-none font-size-080 margin-x-6px",
         invalid: "border-darkred",
         list: "height-120px padding-6px overflow-y-auto",
         removeIcon: "margin-x-6px",
@@ -487,8 +487,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-f23b32ae_0", {
-    source: "[data-v-f23b32ae]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-f23b32ae]{background:0 0}.border-bottom[data-v-f23b32ae]{border-bottom:var(--border-style)}.border[data-v-f23b32ae]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-f23b32ae]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-f23b32ae]{border:none}.cursor-pointer[data-v-f23b32ae]{cursor:pointer}.display-flex[data-v-f23b32ae]{display:flex}.font-size-080[data-v-f23b32ae]{font-size:80%}.font-style-italic[data-v-f23b32ae]{font-style:italic}.font-weight-bold[data-v-f23b32ae]{font-weight:700}.height-120px[data-v-f23b32ae]{height:120px}.margin-x-6px[data-v-f23b32ae]{margin:0 6px 0 6px}.padding-6px[data-v-f23b32ae]{padding:6px}.overflow-y-auto[data-v-f23b32ae]{overflow-y:auto}.text-decoration-underline[data-v-f23b32ae]{text-decoration:underline}.width-100[data-v-f23b32ae]{width:100%}",
+  inject("data-v-179c63c4_0", {
+    source: "[data-v-179c63c4]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-179c63c4]{background:0 0}.border-bottom[data-v-179c63c4]{border-bottom:var(--border-style)}.border[data-v-179c63c4]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-179c63c4]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-179c63c4]{border:none}.cursor-pointer[data-v-179c63c4]{cursor:pointer}.display-flex[data-v-179c63c4]{display:flex}.font-size-080[data-v-179c63c4]{font-size:80%}.font-style-italic[data-v-179c63c4]{font-style:italic}.font-weight-bold[data-v-179c63c4]{font-weight:700}.height-120px[data-v-179c63c4]{height:120px}.margin-x-6px[data-v-179c63c4]{margin:0 6px 0 6px}.padding-6px[data-v-179c63c4]{padding:6px}.overflow-y-auto[data-v-179c63c4]{overflow-y:auto}.text-decoration-underline[data-v-179c63c4]{text-decoration:underline}",
     map: undefined,
     media: undefined
   });
@@ -496,7 +496,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-f23b32ae";
+var __vue_scope_id__ = "data-v-179c63c4";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
