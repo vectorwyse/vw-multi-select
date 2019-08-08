@@ -21,7 +21,6 @@
               <i
                 :class="[_classes.removeIcon, _icons.removeIcon]"
                 :style="_styles.removeIcon"
-                @click="toggleItem(item)"
               ></i>
             </template>
             <template v-else="">

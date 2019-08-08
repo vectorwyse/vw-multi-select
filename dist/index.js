@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.3
+ * @vectorwyse/vw-multi-select v0.1.4
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -338,12 +338,7 @@ var __vue_render__ = function __vue_render__() {
       }
     }, [_vm._v(_vm._s(_vm.selectedListDisplayFunction(item)) + "\n          "), _vm._icons.removeIcon ? [_c('i', {
       "class": [_vm._classes.removeIcon, _vm._icons.removeIcon],
-      style: _vm._styles.removeIcon,
-      on: {
-        "click": function click($event) {
-          return _vm.toggleItem(item);
-        }
-      }
+      style: _vm._styles.removeIcon
     })] : [_c('span', {
       "class": _vm._classes.removeIcon,
       style: _vm._styles.removeIcon
@@ -489,8 +484,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-49c38a9f_0", {
-    source: "[data-v-49c38a9f]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-49c38a9f]{background:0 0}.border-bottom[data-v-49c38a9f]{border-bottom:var(--border-style)}.border[data-v-49c38a9f]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-49c38a9f]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-49c38a9f]{border:none}.cursor-pointer[data-v-49c38a9f]{cursor:pointer}.display-flex[data-v-49c38a9f]{display:flex}.font-size-080[data-v-49c38a9f]{font-size:80%}.font-style-italic[data-v-49c38a9f]{font-style:italic}.font-weight-bold[data-v-49c38a9f]{font-weight:700}.height-120px[data-v-49c38a9f]{height:120px}.margin-x-6px[data-v-49c38a9f]{margin:0 6px 0 6px}.padding-6px[data-v-49c38a9f]{padding:6px}.overflow-y-auto[data-v-49c38a9f]{overflow-y:auto}.text-decoration-underline[data-v-49c38a9f]{text-decoration:underline}.width-100[data-v-49c38a9f]{width:100%}",
+  inject("data-v-f23b32ae_0", {
+    source: "[data-v-f23b32ae]:root{--border-style:solid 1px #ced4da}.background-transparent[data-v-f23b32ae]{background:0 0}.border-bottom[data-v-f23b32ae]{border-bottom:var(--border-style)}.border[data-v-f23b32ae]{border:var(--border-style);border-radius:4px}.border-darkred[data-v-f23b32ae]{border:solid 1px #8b0000;border-radius:4px}.border-none[data-v-f23b32ae]{border:none}.cursor-pointer[data-v-f23b32ae]{cursor:pointer}.display-flex[data-v-f23b32ae]{display:flex}.font-size-080[data-v-f23b32ae]{font-size:80%}.font-style-italic[data-v-f23b32ae]{font-style:italic}.font-weight-bold[data-v-f23b32ae]{font-weight:700}.height-120px[data-v-f23b32ae]{height:120px}.margin-x-6px[data-v-f23b32ae]{margin:0 6px 0 6px}.padding-6px[data-v-f23b32ae]{padding:6px}.overflow-y-auto[data-v-f23b32ae]{overflow-y:auto}.text-decoration-underline[data-v-f23b32ae]{text-decoration:underline}.width-100[data-v-f23b32ae]{width:100%}",
     map: undefined,
     media: undefined
   });
@@ -498,7 +493,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-49c38a9f";
+var __vue_scope_id__ = "data-v-f23b32ae";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
