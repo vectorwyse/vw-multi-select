@@ -26,7 +26,7 @@ In your component:
 ```
 import 'VwMultiSelect' from 'vw-multi-select';
 ...
-components: {VwMultisSelect},
+components: {VwMultiSelect},
 ...
 ```
 
