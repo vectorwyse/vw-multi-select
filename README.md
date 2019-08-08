@@ -33,7 +33,7 @@ components: {VwMultisSelect},
     v-model="listOfSelectedOptions"
     :list="listOfOptions"
 ></vw-multi-select>
-`
+```
 
 ## Props
 
