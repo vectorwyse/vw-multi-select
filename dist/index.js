@@ -1,5 +1,5 @@
 /*!
- * @vectorwyse/vw-multi-select v0.1.8
+ * @vectorwyse/vw-multi-select v0.1.9
  * (c) Vectorwyse
  * Released under the MIT License.
  */
@@ -47,7 +47,8 @@ var bootstrap = {
   },
   styles: {
     input: {
-      minWidth: "150px"
+      minWidth: "150px",
+      width: "100%"
     },
     selected: {
       borderBottom: "solid 1px #ced4da"

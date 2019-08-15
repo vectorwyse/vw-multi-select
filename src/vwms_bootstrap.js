@@ -12,7 +12,7 @@ export default {
     selectedIcon: "text-muted mr-2"
   },
   styles: {
-    input: { minWidth: "150px" },
+    input: { minWidth: "150px", width: "100%" },
     selected: { borderBottom: "solid 1px #ced4da" }
   }
 };
